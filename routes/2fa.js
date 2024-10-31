@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const speakeasy = require("speakeasy");
-const User = require("../Models/User");
+const User = require("../models/User");
 
 router.get("/activate", (req, res) => {
   try {

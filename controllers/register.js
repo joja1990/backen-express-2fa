@@ -9,14 +9,14 @@ exports.registerUser = async (req, res) => {
   if (!password || !email) {
     return res
       .status(400)
-      .json({ msg: "Invalid email/password input!", status: "error" });
+      .json({ msg: " !", status: "error" });
   }
   // Check if user already exists
   const checkedUser = await User.findOne({ email });
   if (checkedUser !== null) {
     return res
       .status(400)
-      .json({ msg: "User already exists!", status: "error" });
+      .json({ msg: "Uuario ya existe!", status: "error" });
   }
 
   bcrypt.genSalt(10, (err, salt) => {
@@ -33,10 +33,10 @@ exports.registerUser = async (req, res) => {
         await newUser.save();
         res
           .status(200)
-          .json({ msg: "Success registeration", status: "success" });
+          .json({ msg: "Registrado correctamente", status: "success" });
       } catch (err) {
         console.log(err);
-        res.status(400).json({ msg: "Failure Registeration", status: "error" });
+        res.status(400).json({ msg: "Error al registrar", status: "error" });
       }
     });
   });

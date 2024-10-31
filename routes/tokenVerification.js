@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
       if (err) {
         console.log(err);
         return res.json({
-          message: "You are not logged in! Login to view resource",
+          message: "¡No has iniciado sesión! Inicie sesión para ver el recurso",
           status: "error",
         });
       }
@@ -23,7 +23,7 @@ router.post("/", (req, res) => {
     });
   } else {
     res.json({
-      message: "You are not logged in! Login to view resource",
+      message: "¡No has iniciado sesión! Inicie sesión para ver el recurso",
       status: "error",
     });
   }
